@@ -27,8 +27,8 @@ fi
 # Output npm debug info on error
 trap cat_npm_debug_log ERR
 
-status "Downloading and installing nginx (1.7.10)"
-nginx_url=https://developers.socialshop.nl/downloads/nginx/nginx-1.7.10.tar.gz
+status "Downloading and installing nginx (1.6.0)"
+nginx_url=https://developers.socialshop.nl/downloads/nginx/nginx-1.6.0.tar.gz
 curl $nginx_url -s -o - | tar xzf - -C $build_dir/vendor
 
 if test -f $build_dir/nginx/sbin/nginx; then
