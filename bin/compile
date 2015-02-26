@@ -31,9 +31,9 @@ status "Downloading and installing nginx (1.6.0 devmynd-github)"
 nginx_url=https://s3.amazonaws.com/devmynd-github/heroku-nginx-1.6.0.tar.gz
 curl $nginx_url -s -o - | tar xzf - -C $build_dir/vendor
 
-if [ ! -f $build_dir/nginx/sbin/nginx ]; then
-  error "Nginx not found in $build_dir/nginx/sbin/nginx"
-fi
+# if [ ! -f $build_dir/nginx/sbin/nginx ]; then
+#   error "Nginx not found in $build_dir/nginx/sbin/nginx"
+# fi
 
 status "Adding boot script"
 cp $bp_dir/bin/boot.sh $build_dir
