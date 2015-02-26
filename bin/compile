@@ -33,13 +33,12 @@ curl $nginx_url -s -o - | tar xzf - -C $build_dir/vendor
 
 list_dir=`ls -R $build_dir`
 
-status "Nginx not found in $build_dir/nginx/sbin/nginx"
 status "List dir:"
 status "$list_dir"
 
-# if [ ! -f $build_dir/nginx/sbin/nginx ]; then
-#   error "Nginx not found in $build_dir/nginx/sbin/nginx"
-# fi
+if [ ! -f $build_dir/vendor/nginx/sbin/nginx ]; then
+  error "Nginx not found in $build_dir/vendor/nginx/sbin/nginx"
+fi
 
 status "Adding boot script"
 cp $bp_dir/bin/boot.sh $build_dir
