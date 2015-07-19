@@ -35,7 +35,7 @@ http {
     listen <%= ENV["PORT"] %>;
     server_name _;
     keepalive_timeout 5;
-    root <%= ENV["ROOT_DIRECTORY"] || 'html' %>;
+    root <%= ENV["ROOT_DIRECTORY"] || 'public' %>;
     index index.html;
     resolver 8.8.8.8;
     port_in_redirect off;
